@@ -1,12 +1,9 @@
-import { useEffect, useState, useContext } from 'react';
-import { useParams } from 'react-router-dom';
-import ItemList from './ItemList';
-import { myContext } from '../HOCContext';
+import React from 'react';
+import ItemDetail from './ItemDetail';
 
-export default function ItemListContainer() {
+export default function ItemDetailContainer() {
+  /* //{}
   const [productos, setProductos] = useState([]);
-
-  const { darkMode, setDarkMode } = useContext(myContext);
 
   const { idCategoria } = useParams();
 
@@ -21,6 +18,7 @@ export default function ItemListContainer() {
 
     const miPromesa = new Promise((res, rej) => {
       setTimeout(() => {
+        //entregar un solo producto no un array
         if (!idCategoria) {
           res(productosHarcode);
         } else {
@@ -32,13 +30,7 @@ export default function ItemListContainer() {
     miPromesa.then((res) => {
       setProductos(res);
     });
-  }, [idCategoria]);
+  }, [idCategoria]); */
 
-  return (
-    <div style={{ backgroundColor: darkMode ? 'black' : 'white', color: darkMode ? 'white' : 'black', border: '1px solid red', padding: '10px', margin: '10px' }}>
-      ITEM LIST CONTAINER
-      <br />
-      <ItemList productos={productos} />
-    </div>
-  );
+  return <ItemDetail producto={{}} />;
 }
