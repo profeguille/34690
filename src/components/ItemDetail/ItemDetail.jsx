@@ -1,7 +1,15 @@
 import React from 'react';
+import { myContext } from '../HOCContext';
+import { useContext } from 'react';
 
 export default function ItemDetail({ producto }) {
-  const exponencial = (x) => x * x;
+  const { addItem } = useContext(myContext);
 
-  return <div>MOSTRA EL PRODUCTO</div>;
+  return (
+    <div>
+      {JSON.stringify(producto)}
+      <img src={producto.img} alt={producto.name} />
+      <button onClick={() => addItem(producto, 1)}>AGREGAR UNO!</button>
+    </div>
+  );
 }
